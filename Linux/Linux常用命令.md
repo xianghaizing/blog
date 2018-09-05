@@ -1,5 +1,4 @@
 ---
-title: Linux常用命令
 grammar_cjkRuby: true
 ---
 
