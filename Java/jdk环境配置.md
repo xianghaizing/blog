@@ -8,7 +8,7 @@
 2.  输入`cmd`打开命令控制台
 3.  输入`java -version`查看java版本,看到如下信息表示安装成功:
 
-``` makefile
+```
 C:\Users\WTG>java -version
 java version "1.8.0_112"
 Java(TM) SE Runtime Environment (build 1.8.0_112-b15)
@@ -24,7 +24,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.112-b15, mixed mode)
 3.  找到`Path` > `编辑(或者双击)` > `变量值`, 添加配置:`;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;`(**注意:新手不要省略分号;**) > `确定`保存.
 4.  此时环境已经配置成功,**重新打开cmd命令行窗口**来验证一下,输入`javac -version`看到如下信息表示配置成功:
 
-``` makefile
+```
 C:\Users\WTG>javac -version
 javac 1.8.0_112
 ```
@@ -43,7 +43,7 @@ public class HelloWorld {
 
 运行命令: `javac` 和 `java`
 
-``` makefile
+```
 F:\>javac HelloWorld.java
 F:\>java HelloWorld
 HelloWorld
