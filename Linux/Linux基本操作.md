@@ -1,8 +1,3 @@
----
-title: Linux基本操作
-grammar_cjkRuby: true
----
-
 >[TOC]
 
 # 基本操作
