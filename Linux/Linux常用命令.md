@@ -1,7 +1,6 @@
----
-grammar_cjkRuby: true
----
+> [TOC]
 
+# 基本命令
 1. 查看Tomcat日志: tail -n 20 -f catalina.out 
 2. 查看指定列表: find ./ -name 'ser*'
 3. 搜索指定文件: locate <文件名>
@@ -17,7 +16,7 @@ grammar_cjkRuby: true
 8. 复制文件: cp -rf <文件> <路径>
 9. 搜索
 
-
+# vim命令
 vim 操作: (非编辑模式下)
 1. 跳转首行: :行号
 2. 查找内容: /内容
