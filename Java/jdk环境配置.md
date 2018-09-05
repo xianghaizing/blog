@@ -1,4 +1,5 @@
 ---
+title: jdk环境配置
 tags: Java,jdk,环境变量
 grammar_cjkRuby: true
 ---
