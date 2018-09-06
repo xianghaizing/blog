@@ -1,4 +1,6 @@
-![canvas时钟](./images/1536236272954.png)
+![canvas时钟](./images/1536236503290.png)
+
+![时钟参数](./images/1536236558747.png)
 
 ``` html?linenums
 <!DOCTYPE html>
