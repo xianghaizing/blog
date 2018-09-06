@@ -1,8 +1,3 @@
----
-title: canvas贪吃蛇游戏
-grammar_cjkRuby: true
----
-
 用canvas做了一个贪吃蛇小游戏
 
 ![开始界面](./images/01.png)
