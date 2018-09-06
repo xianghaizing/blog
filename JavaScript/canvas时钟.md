@@ -1,8 +1,3 @@
----
-title: canvas时钟 
-grammar_cjkRuby: true
----
-
 ![canvas时钟](./images/1536236272954.png)
 
 ``` html?linenums
