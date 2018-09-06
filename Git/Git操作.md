@@ -1,5 +1,5 @@
 ---
-title: Git/Git操作
+title: Git操作
 ---
 > [TOC]
 
