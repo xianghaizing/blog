@@ -121,8 +121,8 @@ code[data-info] {
 }
 
 .bg{
-/*   background: url("data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==") 0 / cover fixed;
- */}
+  background: url("http://images.cnblogs.com/cnblogs_com/linyufeng/1295453/o_bg.jpg") 0 / cover fixed;
+}
 
 body {
   .bg();
@@ -141,7 +141,7 @@ body {
   overflow: hidden;
   border-radius: .3em;
   box-shadow: ~"0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 0.1em 0.5em rgba(0, 0, 0, 0.6)";
-  &::before{
+/*   &::before{
     content: '';
     position: absolute;
     top: 0;
@@ -153,7 +153,7 @@ body {
     -webkit-filter: ~"blur(20px)";
     filter: ~"blur(20px)";
     .bg();
-  }
+  } */
 }
 
 #blogTitle,
@@ -171,5 +171,6 @@ body {
 
 .xiaoshujiang_code {
   background: @codeBg  !important;
+  padding: .5em .5em .5em 1em !important;
 }
 ```
