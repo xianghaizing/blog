@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点赞</title>
+</head>
+<body>
+
+<script>
+    document.onclick = function(e){
+  e = e || window.e;
+  var span = document.createElement('span');
+  span.innerText = '❤';
+  span.style.color = '#'+parseInt(0xFFFFFF*Math.random()).toString(16);
+  span.style.position = 'absolute';
+  span.style.top = e.pageY  + 'px';
+  span.style.left = e.pageX  + 'px';
+  span.style.fontSize = '16px';
+  span.style.opacity = 1;
+  document.body.appendChild(span);
+  var timer = setInterval(function(){
+      if(span.style.opacity==0) {
+          clearInterval(timer);
+          document.body.removeChild(span);
+          return;
+      }
+      span.style.top = span.offsetTop-1+'px';
+      span.style.opacity -= 0.01;
+  },20)
+}
+</script>
+</body>
+</html>
