@@ -1,33 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>点赞</title>
 </head>
-<body>
 
-<script>
-document.onclick = function(e){
-  e = e || window.e;
-  var span = document.createElement('span');
-  span.innerText = '❤';
-  span.style.color = '#'+parseInt(0xFFFFFF*Math.random()).toString(16);
-  span.style.position = 'absolute';
-  span.style.top = e.pageY  + 'px';
-  span.style.left = e.pageX  + 'px';
-  span.style.fontSize = '16px';
-  span.style.opacity = 1;
-  document.body.appendChild(span);
-  var timer = setInterval(function(){
-      if(span.style.opacity==0) {
-          clearInterval(timer);
-          document.body.removeChild(span);
-          return;
-      }
-      span.style.top = span.offsetTop-1+'px';
-      span.style.opacity -= 0.01;
-  },20)
-}
-</script>
+<body id="" style="height:3000px;">
+
+    <div id="he"></div>
+    <script>
+        /* 
+        1. 点击会产生新的❤
+        2. 空闲时间9个❤在运动
+        3. 复用❤
+        */
+        function r(b, a) {
+            return parseInt(Math.random() * (a - b) + b)
+        }
+
+        function init(e, a, c, size) {
+            var size = size || r(16, 24);
+            e.innerText = "❤";
+            e.style.color = "#" + r(0, 16777215).toString(16);
+            e.style.position = "absolute";
+            e.style.top = c + "px";
+            e.style.left = a + "px";
+            console.log(size);
+            e.style.fontSize = size + "px";
+            e.style.opacity = 1;
+            e.style.zIndex = -1;
+            e.className = "1";
+        }
+
+        function he(a, c, size) {
+            var f = document.getElementsByClassName("0");
+            if (f.length > 0) {
+                init(document.getElementsByClassName("0")[0], a, c, size);
+            } else {
+                var e = document.createElement("he");
+                init(e, a, c, size);
+                document.getElementById("he").appendChild(e)
+            }
+        }
+        var click = 0;
+        var timer = null;
+        document.onclick = function (b) {
+            b = b || window.e;
+            click += 3;
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                he(b.pageX, b.pageY, 16 + click);
+                console.log(click);
+                click = 0;
+            }, 150);
+        };
+        var count = 0;
+        setInterval(function () {
+                count++;
+                var g = document.getElementsByClassName("1");
+                for (var c = 0; c < g.length; c++) {
+                    var f = g[c];
+                    f.style.top = f.offsetTop - 1 + "px";
+                    f.style.opacity -= 0.005;
+                    if (f.style.opacity == 0) {
+                        f.className = "0";
+                    }
+                }
+                if (count % 50 == 0) {
+                    var a = document.documentElement.clientWidth || document.body.clientWidth;
+                    var e = document.documentElement.clientHeight || document.body.clientHeight;
+                    var b = document.documentElement.scrollTop || document.body.scrollTop;
+                    he(Math.random() * (a - 40) + 20, Math.random() * (e - 40) + 20 + b)
+                }
+                if (count == 100) {
+                    var j = document.getElementsByClassName("0");
+                    if (j.length > 3) {
+                        for (var c = 3; c < j.length; c++) {
+                            document.getElementById("he").removeChild(j[c])
+                        }
+                    }
+                    count = 0;
+                }
+            },
+            20);
+    </script>
 </body>
+
 </html>
