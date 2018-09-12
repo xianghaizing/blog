@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+  </style>
+</head>
+
+<body>
+    <canvas style="z-index:-1;position:fixed;left:0;top:0;"></canvas>
+    <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+    <script>var canvas = document.querySelector("canvas"),
+      ctx = canvas.getContext("2d"),
+      w = document.documentElement.clientWidth - 6,
+      h = document.documentElement.clientHeight - 6;
+      canvas.width = w;
+      canvas.height = h;
+      var leap = 10;
+      function r(a) {
+        return parseInt(Math.random() * a)
+      }
+      function Ball(a, b, c, d) {
+        _ = this;
+        _.x = a;
+        _.y = b;
+        _.r = 8;
+        _.o = 1;
+        _.xs = r(10) - 5;
+        _.ys = r(10) - 5;
+        _.t = c;
+        _.s = d || 14;
+        _.c = "rgba(" + r(255) + "," + r(255) + "," + r(255) + "," + _.o + ")"
+      }
+      Ball.prototype.show = function() {
+        _ = this;
+        _.run();
+        _.r--;
+        _.t ? drawText(_.t, _.x, _.y, _.c, _.s) : drawCircle(_.x, _.y, _.r, _.c);
+        return _
+      };
+      Ball.prototype.run = function() {
+        _ = this;
+        if (0 >= _.x - _.r || _.x + _.r >= w) _.xs = -_.xs;
+        _.x += _.xs;
+        if (0 >= _.y - _.r || _.y + _.r >= h) _.ys = -_.ys;
+        _.y += _.ys
+      };
+      var ballArr = [];
+      window.onmousemove = function(a) {
+        new Ball(a.x, a.y);
+        ballArr.push((new Ball(a.x, a.y)).show())
+      };
+      var xyArr = [{
+        x: -11,
+        y: -13
+      },
+      {
+        x: 9,
+        y: -13
+      },
+      {
+        x: -1,
+        y: -13
+      },
+      {
+        x: -11,
+        y: -3
+      },
+      {
+        x: -1,
+        y: -3
+      },
+      {
+        x: 9,
+        y: -3
+      },
+      {
+        x: -11,
+        y: 7
+      },
+      {
+        x: -1,
+        y: 7
+      },
+      {
+        x: 9,
+        y: 7
+      }];
+      window.onclick = function(a) {
+        for (var b = 0; b < xyArr.length; b++) {
+          var c = xyArr[b];
+          ballArr.push((new Ball(c.x + a.x, c.y + a.y, "\u2764")).show())
+        }
+      };
+      setInterval(function() {
+        ctx.clearRect(0, 0, w, h);
+        for (var a = 0; a < ballArr.length; a++) {
+          var b = ballArr[a];
+          0 >= b.r ? ballArr.splice(a, 1) : b.show()
+        }
+      },
+      100);
+      function drawText(a, b, c, d, e) {
+        ctx.font = e + "px \u5fae\u8f6f\u96c5\u9ed1";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = d || "#f00";
+        ctx.fillText(a, b, c)
+      }
+      function drawCircle(a, b, c, d) {
+        ctx.beginPath();
+        ctx.arc(a, b, c, 0, 2 * Math.PI);
+        ctx.strokeStyle = d || "#f00";
+        ctx.stroke();
+        ctx.fillStyle = d || "#f00";
+        ctx.fill()
+      }
+      window.onload = function() {
+        for (var a = document.querySelectorAll("code, .xiaoshujiang_code"), b = 0; b < a.length; b++) {
+          var c = a[b];
+          c.setAttribute("id", "Copy_" + b);
+          c.setAttribute("data-clipboard-action", "copy");
+          c.setAttribute("data-clipboard-target", "#Copy_" + b)
+        }
+        new ClipboardJS(a)
+      };</script>
+</body>
+
+</html>

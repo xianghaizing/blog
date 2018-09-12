@@ -4,86 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <title>点赞</title>
+    <script src="./clipboard.min.js"></script>
 </head>
 
 <body id="" style="height:3000px;">
-
+    <pre><code class="language-less hljs" style="border: 0; border-radius: 4px; font-size: 90%; background-color: rgba(214 , 219 , 223 , 0.28); color: #dcdcdc; overflow: visible !important; display: block; overflow-x: auto; background: #3f3f3f; padding: 0.5em;" data-info=" less"><span class="hljs-variable" style="overflow: visible !important; color: #efdcbc; font-size: 14px;">@background:</span><span class="hljs-number" style="overflow: visible !important; color: #8cd0d3; font-size: 14px;">#000</span>;
+        <span class="hljs-variable" style="overflow: visible !important; color: #efdcbc; font-size: 14px;">@width:</span><span class="hljs-number" style="overflow: visible !important; color: #8cd0d3; font-size: 14px;">200px</span>;
+        
+        <span class="hljs-selector-class" style="overflow: visible !important; color: #efef8f; font-size: 14px;">.box</span>{
+            <span class="hljs-attribute" style="overflow: visible !important; color: #efdcbc; font-size: 14px;">width</span>: <span class="hljs-variable" style="overflow: visible !important; color: #efdcbc; font-size: 14px;">@width</span>;
+            <span class="hljs-attribute" style="overflow: visible !important; color: #efdcbc; font-size: 14px;">height</span>: <span class="hljs-variable" style="overflow: visible !important; color: #efdcbc; font-size: 14px;">@width</span>;
+            <span class="hljs-attribute" style="overflow: visible !important; color: #efdcbc; font-size: 14px;">background</span>: <span class="hljs-variable" style="overflow: visible !important; color: #efdcbc; font-size: 14px;">@background</span>;
+        }
+        </code></pre>
     <div id="he"></div>
+    <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
     <script>
-        /* 
-        1. 点击会产生新的❤
-        2. 空闲时间9个❤在运动
-        3. 复用❤
-        */
-        function r(b, a) {
-            return parseInt(Math.random() * (a - b) + b)
-        }
-
-        function init(e, a, c, size) {
-            var size = size || r(16, 24);
-            e.innerText = "❤";
-            e.style.color = "#" + r(0, 16777215).toString(16);
-            e.style.position = "absolute";
-            e.style.top = c + "px";
-            e.style.left = a + "px";
-            console.log(size);
-            e.style.fontSize = size + "px";
-            e.style.opacity = 1;
-            e.style.zIndex = -1;
-            e.className = "1";
-        }
-
-        function he(a, c, size) {
-            var f = document.getElementsByClassName("0");
-            if (f.length > 0) {
-                init(document.getElementsByClassName("0")[0], a, c, size);
-            } else {
-                var e = document.createElement("he");
-                init(e, a, c, size);
-                document.getElementById("he").appendChild(e)
+        function r(a, b) {
+            return parseInt(Math.random() * (b - a) + a)
+          }
+          function init(a, b, c, d) {
+            d = d || 0;
+            a.innerText = "\u2764";
+            a.style.color = "#" + r(0, 16777215).toString(16);
+            a.style.position = "absolute";
+            a.style.top = c + "px";
+            a.style.left = b + "px";
+            a.style.fontSize = r(20, 30) + d + "px";
+            a.style.opacity = 1;
+            a.style.zIndex = -1;
+            a.className = "1"
+          }
+          function he(a, b, c) {
+            if (0 < document.getElementsByClassName("0").length) init(document.getElementsByClassName("0")[0], a, b, c);
+            else {
+              var d = document.createElement("he");
+              init(d, a, b, c);
+              document.getElementById("he").appendChild(d)
             }
-        }
-        var click = 0;
-        var timer = null;
-        document.onclick = function (b) {
-            b = b || window.e;
+          }
+          var click = 0,
+          timer = null;
+          document.onclick = function(a) {
+            a = a || window.e;
             click += 3;
             clearTimeout(timer);
-            timer = setTimeout(function () {
-                he(b.pageX, b.pageY, 16 + click);
-                console.log(click);
-                click = 0;
-            }, 150);
-        };
-        var count = 0;
-        setInterval(function () {
-                count++;
-                var g = document.getElementsByClassName("1");
-                for (var c = 0; c < g.length; c++) {
-                    var f = g[c];
-                    f.style.top = f.offsetTop - 1 + "px";
-                    f.style.opacity -= 0.005;
-                    if (f.style.opacity == 0) {
-                        f.className = "0";
-                    }
-                }
-                if (count % 50 == 0) {
-                    var a = document.documentElement.clientWidth || document.body.clientWidth;
-                    var e = document.documentElement.clientHeight || document.body.clientHeight;
-                    var b = document.documentElement.scrollTop || document.body.scrollTop;
-                    he(Math.random() * (a - 40) + 20, Math.random() * (e - 40) + 20 + b)
-                }
-                if (count == 100) {
-                    var j = document.getElementsByClassName("0");
-                    if (j.length > 3) {
-                        for (var c = 3; c < j.length; c++) {
-                            document.getElementById("he").removeChild(j[c])
-                        }
-                    }
-                    count = 0;
-                }
+            timer = setTimeout(function() {
+              he(a.pageX, a.pageY, click);
+              click = 0
             },
-            20);
+            50)
+          };
+          var count = 0;
+          setInterval(function() {
+            count++;
+            for (var a = document.getElementsByClassName("1"), b = 0; b < a.length; b++) {
+              var c = a[b];
+              c.style.top = c.offsetTop - 1 + "px";
+              c.style.opacity -= .005;
+              0 == c.style.opacity && (c.className = "0")
+            }
+            0 == count % 50 && he(Math.random() * ((document.documentElement.clientWidth || document.body.clientWidth) - 40) + 20, Math.random() * ((document.documentElement.clientHeight || document.body.clientHeight) - 40) + 20 + (document.documentElement.scrollTop || document.body.scrollTop));
+            if (100 == count) {
+              a = document.getElementsByClassName("0");
+              if (3 < a.length) for (b = 3; b < a.length; b++) document.getElementById("he").removeChild(a[b]);
+              count = 0
+            }
+          },
+          20);
+        window.onload = function () {
+            var ele = document.querySelectorAll('code, .xiaoshujiang_code');
+            for (var i = 0; i < ele.length; i++) {
+                var e = ele[i];
+                e.setAttribute("id", "Copy_" + i);
+                e.setAttribute("data-clipboard-action", "copy");
+                e.setAttribute("data-clipboard-target", "#Copy_" + i);
+            }
+            new ClipboardJS(ele)
+        }
     </script>
 </body>
 
