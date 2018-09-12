@@ -1,118 +1,82 @@
-* ,
-.cnblogs - markdown code[data - info] {
-    font - family: Monaco,
-    Consolas,
-    Courier New,
-    Microsoft Yahei,
-    sans - serif ! important
+*,
+.cnblogs-markdown code[data-info] {
+    font-family: Monaco, Consolas, Courier New, Microsoft Yahei, sans-serif !important
 }
+
 blockquote {
     position: fixed;
     right: 0;
     bottom: 0;
-    z - index: 999;
+    z-index: 999;
     overflow: hidden;
-    box - sizing: border - box;
-    padding - right: 15px ! important;
-    padding - left: 0 ! important;
-    width: 50px;
-    height: 50px;
-    border - radius: 0;
-    border - radius: 50 % ;
-    background: #fff;
+    box-sizing: border-box;
+    padding-right: 15px !important;
+    padding-left: 0 !important;
+    width: 35px;
+    height: 35px;
+    border: none !important;
     background: 0 0;
-    animation: eye 2.2s ease - out infinite alternate running; - webkit - animation - name: eye 2.2s ease - out infinite alternate running
 }
-blockquote: hover {
+
+blockquote:hover {
+    border-left: 5px solid #ddd !important;
     width: auto;
     height: auto;
-    border - radius: 0;
+    border-radius: 0;
     background: #fff;
-    animation - name: none
-}@keyframes eye {
-    0 % {
-        width: 50px;
-        height: 50px;
-        border - color: #e91e63
-    }
-    25 % {
-        border - color: #9c27b0
-    }
-    50 % {
-        width: 55px;
-        height: 55px;
-        border - color: #3f51b5
-    }
-    75 % {
-        border - color: #4caf50
-    }
-    to {
-        border - color: #ff9800
-    }
-}@ - webkit - keyframes eye {
-    0 % ,
-    to {
-        width: 50px;
-        height: 50px
-    }
-    0 % {
-        border - color: #e91e63
-    }
-    25 % {
-        border - color: #9c27b0
-    }
-    50 % {
-        width: 55px;
-        height: 55px;
-        border - color: #3f51b5
-    }
-    75 % {
-        border - color: #4caf50
-    }
-    to {
-        width: 60px;
-        height: 60px;
-        border - color: #ff9800
-    }
-}@media screen and(max - width: 767px) {#blogTitle h2 {
-        margin - top: 1pc
-    }.story_image img {
-        max - width: 100 % !important
-    }
-}#ad_t2,
+    animation-name: none
+}
+blockquote::before{
+    content: '☰';
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#ad_t2,
 #cnblogs_c1,
 #cnblogs_c2,
 #under_post_news {
-    display: none ! important
-}.postBody li {
-    margin - bottom: 0
-}.cnblogs - markdown code,
-.cnblogs - post - body code,
+    display: none !important
+}
+
+.postBody li {
+    margin-bottom: 0
+}
+
+.cnblogs-markdown code,
+.cnblogs-post-body code,
 code {
-    border: none ! important;
-    background: rgba(0, 0, 0, .8) ! important;
-    color: #d2d8de ! important;
-    font - family: Monaco,
-    Consolas,
-    Courier New,
-    Microsoft Yahei,
-    sans - serif ! important
-}.story_image {
-    max - width: 100 % !important
-}#sidebar_postcategory li {
+    border: none !important;
+    background: rgba(0, 0, 0, .8) !important;
+    color: #d2d8de !important;
+    font-family: Monaco, Consolas, Courier New, Microsoft Yahei, sans-serif !important
+}
+
+.story_image {
+    max-width: 100% !important
+}
+
+#sidebar_postcategory li {
     float: left;
     margin: 5px 0 5px 5px;
-    padding: 5px ! important;
-    border: 1px solid#008200 ! important;
-    border - radius: 28px;
-    list - style: none;
-    text - indent: 0
+    padding: 5px !important;
+    border: 1px solid#008200 !important;
+    border-radius: 28px;
+    list-style: none;
+    text-indent: 0
 }
+
 body {
-    background - image: linear - gradient(to right, #fddb92 0, #d1fdff 100 % ) background: #bdc3c7;
-    background: -webkit - linear - gradient(to right, #bdc3c7, #2c3e50);
-    background: linear - gradient(to right, #bdc3c7, #2c3e50)
-}#blog - calendar,
+    background-image: linear-gradient(to right, #fddb92 0, #d1fdff 100%)background:#bdc3c7;
+    background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50);
+    background: linear-gradient(to right, #bdc3c7, #2c3e50)
+}
+
+#blog-calendar,
 #header,
 #sidebar_postarchive,
 #sidebar_postcategory,
@@ -122,10 +86,12 @@ body {
 .day,
 .entrylist {
     overflow: hidden;
-    border - radius: 6px;
-    background: hsla(0, 0 % , 100 % , .25) border - box;
-    box - shadow: 0 0 0 1px hsla(0, 0 % , 100 % , .3) inset
-}#blogTitle,
+    border-radius: 6px;
+    background: hsla(0, 0%, 100%, .25)border-box;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3)inset
+}
+
+#blogTitle,
 #navigator,
 #q,
 #tbCommentBody,
@@ -134,14 +100,20 @@ body {
 .mySearch,
 input {
     background: 0 0
-}.catListTitle {
+}
+
+.catListTitle {
     background: rgba(51, 153, 0, .8);
     color: #eee;
-    text - shadow: none
-}.xiaoshujiang_code {
-    padding - left: 1em ! important;
-    background: rgba(0, 0, 0, .8) ! important
-}.catList ul li,
+    text-shadow: none
+}
+
+.xiaoshujiang_code {
+    padding-left: 1em !important;
+    background: rgba(0, 0, 0, .8) !important
+}
+
+.catList ul li,
 .catListArticleArchive ul li,
 .catListArticleCategory ul li,
 .catListBlogRank ul li,
@@ -155,50 +127,61 @@ input {
 .catListPostCategory ul li,
 .catListTag ul li,
 .catListView ul li {
-    border: none ! important
-}#Header1_HeaderTitle,
+    border: none !important
+}
+
+#Header1_HeaderTitle,
 #blogTitle h2,
 #footer,
-#navList a: active,
-#navList a: link,
-#navList a: visited {
+#navList a:active,
+#navList a:link,
+#navList a:visited {
     color: #fff
 }
-a: active,
-a: link,
-a: visited {
+
+a:active,
+a:link,
+a:visited {
     color: #111
-}#footer {
-    border - top: 1px solid#999
-}#navList a: hover {
-    border - radius: 60px;
+}
+
+#footer {
+    border-top: 1px solid#999
+}
+
+#navList a:hover {
+    border-radius: 60px;
     background: rgba(51, 153, 0, .8);
-    text - decoration: none;
-    text - shadow: none
-}.xiaoshujiang_code: before,
-code[data - info] : before {
+    text-decoration: none;
+    text-shadow: none
+}
+
+.xiaoshujiang_code:before,
+code[data-info]:before {
     float: right;
     color: #fff;
     content: "Copy";
-    font - size: 9pt;
-    font - family: Monaco,
-    Consolas,
-    Courier New,
-    Microsoft Yahei,
-    sans - serif ! important;
+    font-size: 9pt;
+    font-family: Monaco, Consolas, Courier New, Microsoft Yahei, sans-serif !important;
     padding: 3px;
     border: 2px solid#fff;
-    border - radius: 12px;
+    border-radius: 12px;
     opacity: 0;
     transition: all.6s;
     cursor: pointer
-}.xiaoshujiang_code: hover: before,
-code[data - info] : hover: before {
+}
+
+.xiaoshujiang_code:hover:before,
+code[data-info]:hover:before {
     opacity: 1
-}: :-moz - selection {
+}
+
+::-moz-selection {
     background: rgb(51, 153, 0);
     color: #fff
-}: :selection {
+}
+
+::selection {
     background: rgb(51, 153, 0);
     color: #fff
 }
