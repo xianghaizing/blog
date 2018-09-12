@@ -71,7 +71,8 @@ code {
 }
 
 body {
-    background-image: linear-gradient(to right, #fddb92 0, #d1fdff 100%)background:#bdc3c7;
+    background-image: linear-gradient(to right, #fddb92 0, #d1fdff 100%);
+    background:#bdc3c7;
     background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50);
     background: linear-gradient(to right, #bdc3c7, #2c3e50)
 }
