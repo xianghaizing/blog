@@ -1,7 +1,3 @@
----
-title: Java8 新特性
-grammar_cjkRuby: true
----
 
 > [toc]
 
