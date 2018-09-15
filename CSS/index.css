@@ -26,7 +26,8 @@ blockquote:hover {
     background: #fff;
     animation-name: none
 }
-blockquote::before{
+
+blockquote::before {
     content: '☰';
     position: fixed;
     bottom: 10px;
@@ -72,7 +73,7 @@ code {
 
 body {
     background-image: linear-gradient(to right, #fddb92 0, #d1fdff 100%);
-    background:#bdc3c7;
+    background: #bdc3c7;
     background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50);
     background: linear-gradient(to right, #bdc3c7, #2c3e50)
 }
@@ -186,3 +187,26 @@ code[data-info]:hover:before {
     background: rgb(51, 153, 0);
     color: #fff
 }
+
+@media(max-width:767px) {
+    #blogTitle h2 {
+        margin-top: 1pc
+    }
+
+    .story_image img {
+        max-width: 100% !important
+    }
+
+    blockquote:hover {
+        height: 400px;
+        overflow-y: scroll;
+        max-width: 280px;
+    }
+}
+
+h1 {font-size: 28px !important;}
+#cnblogs_post_body h2 {font-size: 21px !important;}
+#cnblogs_post_body h3 {font-size: 16px !important;}
+#cnblogs_post_body h4 {font-size: 14px !important;}
+#cnblogs_post_body h5 {font-size: 13px !important;}
+#cnblogs_post_body h6 {font-size: 12px !important;}
