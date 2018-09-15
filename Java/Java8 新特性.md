@@ -1,5 +1,4 @@
-
-> [toc]
+>[TOC]
 
 # 第一章 lambda表达式
 
@@ -27,10 +26,10 @@ Lambda表达式的使用需要配合函数式接口,函数接口是只有一个�
 
 |   接口  |  参数   |  返回类型   |   示例  |
 | --- | --- | --- | --- |
-| Predicate<T> |	T |	boolean |	boolean test(T t);是或者不是 |
-| Consumer<T>| T| 	void| 	void accept(T t);输出一个值 |
+| Predicate&lt;T> |	T |	boolean |	boolean test(T t);是或者不是 |
+| Consumer&lt;T>| T| 	void| 	void accept(T t);输出一个值 |
 | Function<T,R>| 	T| 	R| 	R apply(T t);获取长度| 
-| Supplier<T>| 	None| 	T| 	T get();工厂方法| 
+| Supplier&lt;T>| 	None| 	T| 	T get();工厂方法| 
 
 ### 1.2.1.字符串长度是否大于5
 
