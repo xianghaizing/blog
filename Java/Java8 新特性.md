@@ -229,8 +229,10 @@ System.out.println(b.test(str1,str2));
 
 # 第六章 新日期和时间API
 
-## 6.1.LocalDate LocalTime LocalDateTime
-本地日期 本地时间 和 本地时间日期
+## 6.1.Local
+1. LocalDate 本地日期
+2. LocalTime 本地时间 
+3. LocalDateTime 本地时间日期
 ``` java
 LocalDate date = LocalDate.of(2014, 3, 18);
 System.out.println(date);
