@@ -3,7 +3,9 @@
 # 一、类锁和对象锁
 
 1. 类锁：在代码中的方法上加了`static和synchronized`的锁，或者`synchronized(xxx.class)`
+
 2. 对象锁：在代码中的方法上加了`synchronized`的锁，或者`synchronized(this)`的代码段
+
 3. 方法锁和私有锁：都属于对象锁
     私有锁：在类内部声明一个私有属性如`private Object lock`，在需要加锁的代码段`synchronized(lock)`
 
