@@ -1,7 +1,3 @@
----
-title: Java类锁和对象锁
-grammar_cjkRuby: true
----
 > [TOC]
 
 # 一、类锁和对象锁
