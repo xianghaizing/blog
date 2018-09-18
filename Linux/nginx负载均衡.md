@@ -1,35 +1,31 @@
----
-title: nginx负载均衡
-grammar_cjkRuby: true
----
-
 > [TOC]
 
 # 第一章 环境搭建
 
 依赖 gcc openssl-devel pcre-devel zlib-devel
 
-1.1.安装依赖
+## 1.1.安装依赖
 
     yum -y install gcc openssl-devel pcre-devel zlib-devel
 
-1.2.上传nginx压缩包并解压
+## 1.2.上传nginx压缩包并解压
 
     tar -zxvf nginx-1.8.1.tar.gz 
 
-1.3.进入目录并执行configure 命令
+## 1.3.进入目录并执行configure命令
 
     cd nginx-1.8.1
     ./configure --prefix=/home/nginx 
 
-1.4.编译安装
+## 1.4.编译安装
 
     make && make install
 
 最终目录结构:
 ![](./images/1537275076466.png)
 
-1.5.启动nginx访问
+## 1.5.启动nginx访问
+
 进入nginx安装目录(指定好的那个文件夹)中的sbin文件夹,然后启动nginx
 
     cd sbin/
@@ -38,11 +34,11 @@ grammar_cjkRuby: true
 浏览器访问: 虚拟机ip的80端口
 
 ![](./images/1537275133859.png)
-Nginx默认监听80端口，当出现以上信息，说明安装启动成功。
+nginx默认监听80端口，当出现以上信息，说明安装启动成功。
 
-1.6.常用命令
-使用语法：`nginx -s 信号`
-信号可以是下列之一：
+## 1.6.常用命令
+
+使用语法：`nginx -s 信号` 信号可以是下列之一：
 * stop - 快速关机  
 * quit - 优雅的关机
 * reload - 重新加载配置文件  
@@ -54,7 +50,7 @@ Nginx默认监听80端口，当出现以上信息，说明安装启动成功。
 
 # 第二章 负载均衡搭建
 
-需要: 1个nginx 和 3个Tomcat服务
+模拟: 1个nginx 和 3个Tomcat服务
 
 ## 2.1.Tomcat配置
 
