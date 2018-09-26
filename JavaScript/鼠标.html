@@ -126,9 +126,15 @@
           var c = a[b];
           c.setAttribute("id", "Copy_" + b);
           c.setAttribute("data-clipboard-action", "copy");
-          c.setAttribute("data-clipboard-target", "#Copy_" + b)
+          c.setAttribute("data-clipboard-target", "#Copy_" + b);
+
+          $('blockquote ul')
+          .prepend('<a href="#Header1_HeaderTitle">返回顶部</a>')
+          .append('<a href="#MySignature">快速到底</a>');
         }
         new ClipboardJS(a)
+
+        
       };</script>
 </body>
 
