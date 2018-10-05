@@ -13,129 +13,172 @@
 </head>
 
 <body>
-    <canvas style="z-index:-1;position:fixed;left:0;top:0;"></canvas>
-    <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
-    <script>var canvas = document.querySelector("canvas"),
+    <div id="header">
+        <div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/linyufeng/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页"></a>			
+          
+      <!--done-->
+      <h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/linyufeng/">林宇风</a></h1>
+      <h2>简洁✣高效</h2>
+      
+      
+      
+          
+        </div><!--end: blogTitle 博客的标题和副标题 -->
+        <div id="navigator">
+          
+      <ul id="navList">
+      <li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+      <li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/linyufeng/">首页</a></li>
+      <li></li>
+      <li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%9E%97%E5%AE%87%E9%A3%8E">联系</a></li>
+      <li>
+      <!----></li>
+      <li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+      </ul>
+          <div class="blogStats">
+            
+            <div id="blog_stats">
+      <span id="stats_post_count">随笔 - 28&nbsp; </span>
+      <span id="stats_article_count">文章 - 0&nbsp; </span>
+      <span id="stats-comment_count">评论 - 2</span>
+      </div>
+            
+          </div><!--end: blogStats -->
+        </div><!--end: navigator 博客导航栏 -->
+      </div>
+  <canvas style="z-index:-1;position:fixed;left:0;top:0;"></canvas>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+  <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+  <script>
+    var canvas = document.querySelector("canvas"),
       ctx = canvas.getContext("2d"),
       w = document.documentElement.clientWidth - 6,
       h = document.documentElement.clientHeight - 6;
-      canvas.width = w;
-      canvas.height = h;
-      var leap = 10;
-      function r(a) {
-        return parseInt(Math.random() * a)
-      }
-      function Ball(a, b, c, d) {
-        _ = this;
-        _.x = a;
-        _.y = b;
-        _.r = 8;
-        _.o = 1;
-        _.xs = r(10) - 5;
-        _.ys = r(10) - 5;
-        _.t = c;
-        _.s = d || 14;
-        _.c = "rgba(" + r(255) + "," + r(255) + "," + r(255) + "," + _.o + ")"
-      }
-      Ball.prototype.show = function() {
-        _ = this;
-        _.run();
-        _.r--;
-        _.t ? drawText(_.t, _.x, _.y, _.c, _.s) : drawCircle(_.x, _.y, _.r, _.c);
-        return _
-      };
-      Ball.prototype.run = function() {
-        _ = this;
-        if (0 >= _.x - _.r || _.x + _.r >= w) _.xs = -_.xs;
-        _.x += _.xs;
-        if (0 >= _.y - _.r || _.y + _.r >= h) _.ys = -_.ys;
-        _.y += _.ys
-      };
-      var ballArr = [];
-      window.onmousemove = function(a) {
-        new Ball(a.x, a.y);
-        ballArr.push((new Ball(a.x, a.y)).show())
-      };
-      var xyArr = [{
-        x: -11,
-        y: -13
-      },
-      {
-        x: 9,
-        y: -13
-      },
-      {
-        x: -1,
-        y: -13
-      },
-      {
-        x: -11,
-        y: -3
-      },
-      {
-        x: -1,
-        y: -3
-      },
-      {
-        x: 9,
-        y: -3
-      },
-      {
-        x: -11,
-        y: 7
-      },
-      {
-        x: -1,
-        y: 7
-      },
-      {
-        x: 9,
-        y: 7
-      }];
-      window.onclick = function(a) {
-        for (var b = 0; b < xyArr.length; b++) {
-          var c = xyArr[b];
-          ballArr.push((new Ball(c.x + a.x, c.y + a.y, "\u2764")).show())
-        }
-      };
-      setInterval(function() {
-        ctx.clearRect(0, 0, w, h);
-        for (var a = 0; a < ballArr.length; a++) {
-          var b = ballArr[a];
-          0 >= b.r ? ballArr.splice(a, 1) : b.show()
-        }
-      },
-      100);
-      function drawText(a, b, c, d, e) {
-        ctx.font = e + "px \u5fae\u8f6f\u96c5\u9ed1";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillStyle = d || "#f00";
-        ctx.fillText(a, b, c)
-      }
-      function drawCircle(a, b, c, d) {
-        ctx.beginPath();
-        ctx.arc(a, b, c, 0, 2 * Math.PI);
-        ctx.strokeStyle = d || "#f00";
-        ctx.stroke();
-        ctx.fillStyle = d || "#f00";
-        ctx.fill()
-      }
-      window.onload = function() {
-        for (var a = document.querySelectorAll("code, .xiaoshujiang_code"), b = 0; b < a.length; b++) {
-          var c = a[b];
-          c.setAttribute("id", "Copy_" + b);
-          c.setAttribute("data-clipboard-action", "copy");
-          c.setAttribute("data-clipboard-target", "#Copy_" + b);
+    canvas.width = w;
+    canvas.height = h;
+    var leap = 10;
 
-          $('blockquote ul')
-          .prepend('<a href="#Header1_HeaderTitle">返回顶部</a>')
-          .append('<a href="#MySignature">快速到底</a>');
-        }
-        new ClipboardJS(a)
+    function r(a) {
+      return parseInt(Math.random() * a)
+    }
 
-        
-      };</script>
+    function Ball(a, b, c, d) {
+      _ = this;
+      _.x = a;
+      _.y = b;
+      _.r = 8;
+      _.o = 1;
+      _.xs = r(10) - 5;
+      _.ys = r(10) - 5;
+      _.t = c;
+      _.s = d || 14;
+      _.c = "rgba(" + r(255) + "," + r(255) + "," + r(255) + "," + _.o + ")"
+    }
+    Ball.prototype.show = function () {
+      _ = this;
+      _.run();
+      _.r--;
+      _.t ? drawText(_.t, _.x, _.y, _.c, _.s) : drawCircle(_.x, _.y, _.r, _.c);
+      return _
+    };
+    Ball.prototype.run = function () {
+      _ = this;
+      if (0 >= _.x - _.r || _.x + _.r >= w) _.xs = -_.xs;
+      _.x += _.xs;
+      if (0 >= _.y - _.r || _.y + _.r >= h) _.ys = -_.ys;
+      _.y += _.ys
+    };
+    var ballArr = [];
+    window.onmousemove = function (a) {
+      new Ball(a.x, a.y);
+      ballArr.push((new Ball(a.x, a.y)).show())
+    };
+    var xyArr = [{
+      x: -11,
+      y: -13
+    }, {
+      x: 9,
+      y: -13
+    }, {
+      x: -1,
+      y: -13
+    }, {
+      x: -11,
+      y: -3
+    }, {
+      x: -1,
+      y: -3
+    }, {
+      x: 9,
+      y: -3
+    }, {
+      x: -11,
+      y: 7
+    }, {
+      x: -1,
+      y: 7
+    }, {
+      x: 9,
+      y: 7
+    }];
+    window.onclick = function (a) {
+      for (var b = 0; b < xyArr.length; b++) {
+        var c = xyArr[b];
+        ballArr.push((new Ball(c.x + a.x, c.y + a.y, "\u2764")).show())
+      }
+    };
+    setInterval(function () {
+      ctx.clearRect(0, 0, w, h);
+      for (var a = 0; a < ballArr.length; a++) {
+        var b = ballArr[a];
+        0 >= b.r ? ballArr.splice(a, 1) : b.show()
+      }
+    }, 100);
+
+    function drawText(a, b, c, d, e) {
+      ctx.font = e + "px \u5fae\u8f6f\u96c5\u9ed1";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = d || "#f00";
+      ctx.fillText(a, b, c)
+    }
+
+    function drawCircle(a, b, c, d) {
+      ctx.beginPath();
+      ctx.arc(a, b, c, 0, 2 * Math.PI);
+      ctx.strokeStyle = d || "#f00";
+      ctx.stroke();
+      ctx.fillStyle = d || "#f00";
+      ctx.fill()
+    }
+    $(function () {
+      $("code").each(function (b) {
+        if (!$(this).attr('class')) {
+          $(this).attr({
+            "id": "Copy_" + b,
+            "data-clipboard-target": "#Copy_" + b
+          })
+        } else {
+
+          $(this).attr({
+            "id": "Copy_" + b,
+          }).before('<i data-clipboard-target="#Copy_' + b + '">copy</i>')
+        }
+      });
+      $('i').on('click', function () {
+        $(this).html('done').css({
+          'color': '#390',
+          'border-color': '#390'
+        });
+      });
+      $('blockquote>div>ul').prepend(
+        '<a href="#Header1_HeaderTitle" style="color:#08c;text-decoration:none;font-size:14px;">返回顶部 ↑</a>').append(
+        '<a href="#MySignature" style="color:#08c;text-decoration:none;font-size:14px;">快速到底 ↓</a>');
+      new ClipboardJS(document.querySelectorAll("[data-clipboard-target]"));
+      $('#header h1').append("<a href='https://github.com/xianghaizing/blog'><img title='github' width='24' src='https://www.cnblogs.com/images/cnblogs_com/linyufeng/1312177/o_github.jpg'></a>")
+    });
+  </script>
 </body>
 
 </html>
