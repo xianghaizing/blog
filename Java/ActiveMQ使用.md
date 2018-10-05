@@ -1,8 +1,5 @@
----
-title: ActiveMQ使用 
-tags: 新建,模板,小书匠
-grammar_cjkRuby: true
----
+
+> [toc]
 
 *ActiveMQ是Apache基金会开源的一个消息队列框架，也叫消息中间件。*
 
