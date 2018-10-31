@@ -6,9 +6,7 @@ tags: linux,80端口,防火墙
 
 1、执行该命令打开端口文件
 
-``` nginx
-vi /etc/sysconfig/iptables
-```
+    vi /etc/sysconfig/iptables
 
 2、复制一行将端口设置为80
 
