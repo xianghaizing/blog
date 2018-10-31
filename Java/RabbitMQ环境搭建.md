@@ -1,7 +1,7 @@
 ---
-title: RabbitMQ环境搭建
 tags: 消息,RabbitMQ
 ---
+> [toc]
 
 1. AMQP协议，可以跨语言通信 Advance Message Queuing Protocol
 2. RabbitMQ底层使用Erlang语言进行编写
@@ -94,7 +94,7 @@ http://192.168.37.220:15672
 
 ![](./images/1540973864301.png)
 
-## 3. 资料
+## 3.资料
 
 参考: https://blog.csdn.net/ALLsharps/article/details/52062416
 
