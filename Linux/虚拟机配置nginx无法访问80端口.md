@@ -9,26 +9,22 @@ tags: linux,80端口,防火墙
 ``` nginx
 vi /etc/sysconfig/iptables
 ```
+
 2、复制一行将端口设置为80
 
-``` nginx
--A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-```
+    -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+
 
 3、保存退出
 
-``` nginx
-:wq
-```
+    :wq
+
 
 4、重启服务使设置生效
 
-``` nginx
-service iptables restart
-```
+    service iptables restart
+
 
 也可以直接关闭防火墙，学习阶段可以不用管防火墙，公司中都是运维在管理。
 
-``` nginx
-service iptables stop
-```
+    service iptables stop
