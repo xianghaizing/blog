@@ -116,7 +116,7 @@ public class AppProducer {
   }
 }
 ```
-![](./images/1538711008347.png)
+:![](./images/1538711008347.png)
 查看队列
 ![](./images/1538711086962.png)
 ## 3．消费者
@@ -162,7 +162,7 @@ public class AppConsumer {
   }
 }
 ```
-![](./images/1538711218996.png)
+:![](./images/1538711218996.png)
 # 四、主题模式
 ## 1．修改队列名字
 
@@ -388,15 +388,10 @@ public class App {
   public void producer(){
     for (int i = 0; i < 100; i++) {
       producerService.sendMessage("test_"+i);
-    
-
-![Diagram](./attachments/1538712228042.drawio.html)
-
 }
   }
 }
 ```
-
 # 六、集群环境
 *高可用：解决单点故障引起的服务中断
 负载均衡：多服务器提供服务，避免单台服务器性能问题*
