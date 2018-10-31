@@ -1,11 +1,10 @@
 ---
-title: 自动配置redis主从和哨兵 
 tags: redis,shell
 ---
 
 每次创建redis主从和哨兵服务,文件夹要复制好几个,配置文件改一大堆.繁琐还容易出错,就想通过shell脚本自动帮我配置好端口以及文件,下面就是脚本内容:
 
-redis.conf
+redis-tool.sh
 
 ``` bash
 #!/bin/bash
