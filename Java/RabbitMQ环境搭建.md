@@ -10,7 +10,7 @@ tags: 消息,RabbitMQ
 5. 集群模式丰富，表达式，镜像队列模型
 
 
-## 1．安装erlang环境
+## 1.安装erlang环境
 
 安装依赖环境
 
@@ -51,7 +51,7 @@ Erlang/OTP 19 [erts-8.0] [source] [64-bit] [async-threads:10] [hipe] [kernel-pol
 Eshell V8.0  (abort with ^G)
 ```
 
-## 2．安装 rabbitmq
+## 2.安装rabbitmq
 
 ``` shell
 wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.3/rabbitmq-server-generic-unix-3.6.3.tar.xz
