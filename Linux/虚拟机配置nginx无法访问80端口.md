@@ -1,6 +1,5 @@
 ---
 tags: linux,80端口,防火墙
-grammar_cjkRuby: true
 ---
 
 在虚拟机中配置成功并正常启动nginx服务后，但浏览器无法访问服务，原因可能是linux中未开放80端口(nginx默认的端口为80)。
