@@ -90,6 +90,10 @@ cd ./rabbitmq_server-3.6.3/sbin/
 浏览器访问
 http://192.168.37.220:15672
 
+![](./images/1540973829074.png)
+
+![](./images/1540973864301.png)
+
 ## 3. 资料
 
 参考: https://blog.csdn.net/ALLsharps/article/details/52062416
