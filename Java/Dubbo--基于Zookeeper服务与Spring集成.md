@@ -1,11 +1,10 @@
 ---
-title: Dubbo--基于Zookeeper服务与Spring集成
 tags: Dubbo,Zookeeper,Spring
 ---
 
 > [toc]
 
-*搭建dubbo微服务需要使用zookeeper作为服务注册中心,首先要搭建好zookeeper,安装方式参考[zookeeper安装教程](https://www.cnblogs.com/linyufeng/p/9902297.html#MySignature)*
+*搭建dubbo微服务需要使用zookeeper作为服务注册中心,首先要搭建好zookeeper,安装方式参考[zookeeper安装教程](https://www.cnblogs.com/linyufeng/p/9902297.html)*
 
 # 1.部署dubbo服务管理中心
 下载 [dubbo-admin-2.6.0.war](http://www.java1234.com/a/javabook/javaweb/2018/0224/10496.html), 放在/apache-tomcat-8.5.34/webapps 目录下,启动tomcat服务,浏览器访问:`http://192.168.37.220:8080/dubbo-admin-2.6.0/` (修改成自己ip进行访问),用户名`root` 密码`root`
