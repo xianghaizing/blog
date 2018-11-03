@@ -1,6 +1,4 @@
----
-title: ActiveMQ使用
----
+
 > [toc]
 
 *ActiveMQ是Apache基金会开源的一个消息队列框架，也叫消息中间件。*
@@ -22,12 +20,15 @@ AMQP（Advanced Message Queuing Protocol）是一个提供统一消息服务的�
 ## 1．下载解压
 地址： http://www.apache.org/dyn/closer.cgi?filename=/activemq/5.15.6/apache-activemq-5.15.6-bin.zip&action=download
 解压后目录
+
 ![](./images/1538710761539.png)
 ## 2．启动服务
 双击运行 \bin\win64\activemq.bat，如果失败使用管理员权限运行
+
 ![](./images/1538710852982.png)
 
 默认端口为8161，访问 http://localhost:8161/ 用户名密码都为admin
+
 ![](./images/1538710829705.png)
 
 # 二、Linux安装ActiveMQ
@@ -116,8 +117,9 @@ public class AppProducer {
   }
 }
 ```
-:![](./images/1538711008347.png)
+![](./images/1538711008347.png)
 查看队列
+
 ![](./images/1538711086962.png)
 ## 3．消费者
 
@@ -162,7 +164,7 @@ public class AppConsumer {
   }
 }
 ```
-:![](./images/1538711218996.png)
+![](./images/1538711218996.png)
 # 四、主题模式
 ## 1．修改队列名字
 
