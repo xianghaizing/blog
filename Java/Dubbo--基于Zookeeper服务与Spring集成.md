@@ -266,7 +266,7 @@ public class Provider {
        xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
-    <dubbo:application name="admin-provider" owner="admin" organization="dubbox" />
+    <dubbo:application name="admin-consumer" owner="admin" organization="dubbox" />
 
     <!-- 使用multicast广播注册中心暴露发现服务地址 -->
     <dubbo:registry address="zookeeper://192.168.37.220:2181" />
