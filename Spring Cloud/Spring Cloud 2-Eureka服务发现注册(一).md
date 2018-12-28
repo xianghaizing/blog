@@ -6,6 +6,8 @@ grammar_cjkRuby: true
 
 > [toc]
 
+![服务架构图](./images/1545980545737.png)
+
 # 1．服务端配置
 
 使用`Spring Boot 2.0.2.RELEASE`和`Spring Cloud Finchley.SR2`官方正式版进行项目构建,创建名字为`eureka-server`的Spring Boot工程
