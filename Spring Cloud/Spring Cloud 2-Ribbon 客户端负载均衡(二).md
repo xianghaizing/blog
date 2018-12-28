@@ -6,6 +6,8 @@ grammar_cjkRuby: true
 
 > [toc]
 
+![服务架构图](./images/1545983910405.png)
+
 # 1.Hello-Service服务端配置
 
 在pom文件中添加Eureka客户端依赖,并配置Eureka注册中心的服务地址.也可以不配置,那就会使用默认的localhost的`8761`端口.
