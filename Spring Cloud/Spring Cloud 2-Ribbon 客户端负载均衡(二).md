@@ -8,6 +8,7 @@ grammar_cjkRuby: true
 
 # 1.Hello-Service服务端配置
 
+在pom文件中添加Eureka客户端依赖,并配置Eureka注册中心的服务地址.也可以不配置,那就会使用默认的localhost的`8761`端口.
 ## pom.xml
 ``` xml
 <!-- eureka 客户端 -->
@@ -74,8 +75,9 @@ hello:
   serviceUrl: http://localhost:8081/hello/ 
 ```
 
-http://localhost:8081/hello 是hello-service的服务请求地址,用于非负载均衡的情况下;
-在Ribbon中可以直接调用`HELLO-SERVICE`服务注册的名字使用服务,已达到负载均衡的目的.
+http://localhost:8081/hello 是hello-service的服务请求地址,用于`非负载均衡`的情况下,Bean的配置不需要加` @LoadBalanced`注解;
+
+在Ribbon中可以直接调用`HELLO-SERVICE`服务注册的名字使用服务,已达到`负载均衡`的目的.
 
 
 ## Application.java
