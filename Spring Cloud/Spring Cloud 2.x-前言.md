@@ -4,6 +4,8 @@ tags: Spring Cloud,Spring Boot
 grammar_cjkRuby: true
 ---
 
+> [toc]
+
 微服务已经成为企业开发的标配,阿里的Dubbo已经被企业大规模使用,Spring Cloud作为后起之秀,同时也是 `Spring全家桶`Spring家族的成员,未来前景一片光明,是时候开始研究学习了.
 
 网上大部分文章都是基于Spring Cloud 1.x和Spring Boot 1.x进行搭建和介绍,Spring Cloud Finchley的`Service Release 2 (SR2) 版本`已发布,那就直接上手2.x. **Spring Cloud Finchley 基于 Spring Boot 2.0.x 而构建**.
@@ -28,12 +30,11 @@ grammar_cjkRuby: true
 
 其他详细更新内容[请查看发布公告](https://spring.io/blog/2018/10/24/spring-cloud-finchley-sr2-is-available)，主要是各模块的 bug 修复。
 
-``` avrasm
-GA: General Availability,正式发布的版本，官方推荐使用此版本。在国外都是用GA来说明release版本的。
+> GA: General Availability,正式发布的版本，官方推荐使用此版本。。
 RELEASE: 正式版，等价于GA
 SNAPSHOT: 快照版，可以稳定使用，且仍在继续改进版本。
 PRE: 预览版,内部测试版. 主要是给开发人员和测试人员测试和找BUG用的，不建议使用；
-```
+
 **模块介绍**
 
 | 模块 | 功能 |
