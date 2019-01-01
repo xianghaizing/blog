@@ -32,10 +32,10 @@ grammar_cjkRuby: true
 
 其他详细更新内容[请查看发布公告](https://spring.io/blog/2018/10/24/spring-cloud-finchley-sr2-is-available)，主要是各模块的 bug 修复。
 
-> GA: General Availability,正式发布的版本，官方推荐使用此版本。。
-RELEASE: 正式版，等价于GA
-SNAPSHOT: 快照版，可以稳定使用，且仍在继续改进版本。
-PRE: 预览版,内部测试版. 主要是给开发人员和测试人员测试和找BUG用的，不建议使用；
+> - GA: General Availability,正式发布的版本，官方推荐使用此版本
+> - RELEASE: 正式版，等价于GA
+> - SNAPSHOT: 快照版，可以稳定使用，且仍在继续改进版本
+> - PRE: 预览版,内部测试版. 主要是给开发人员和测试人员测试和找BUG用的，不建议使用
 
 # 模块介绍
 
