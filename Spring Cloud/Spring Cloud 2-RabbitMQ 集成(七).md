@@ -1,5 +1,5 @@
 ---
-title: Spring Cloud 2-RabbitMQ 集成(七)
+title: Spring Cloud 2-RabbitMQ 集成(八)
 tags: Spring Cloud, RabbitMQ
 grammar_cjkRuby: true
 ---
