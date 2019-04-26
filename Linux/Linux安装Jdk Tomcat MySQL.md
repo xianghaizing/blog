@@ -1,7 +1,3 @@
----
-title: Linux安装Jdk Tomcat MySQL
-grammar_cjkRuby: true
----
 
 > [toc]
 
