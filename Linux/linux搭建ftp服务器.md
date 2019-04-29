@@ -1,12 +1,8 @@
----
-title: linux搭建ftp服务器
-grammar_cjkRuby: true
----
 
 工具: vsftpd
 
 安装vsftpd` yum install vsftpd -y`
-- `rpm -qa | grep vsftpd`检查是否已安装vsftpd
+- 检查是否已安装vsftpd`rpm -qa | grep vsftpd`
 - 默认配置文件在`/etc/vsftpd/vsftpd.conf`
 
 创建ftp工作目录,例如: `mkdir /usr/ftpdata`
@@ -17,7 +13,7 @@ grammar_cjkRuby: true
 
 重置ftpuser密码`passwd ftpuser`
 
-修改/添加配置:
+修改/添加配置:`vi /etc/vsftpd/vsftpd.conf`
 ```
 # 不允许匿名登录
 anonymous_enable=NO
@@ -45,6 +41,6 @@ pasv_max_port=62000
 
 启动服务,在浏览器中访问: ftp://192.168.37.200 输入用户名和密码
 
-![enter description here](./images/1556503400077.png)
+![](./images/1556503400077.png)
 
 参考: https://www.jb51.net/article/138824.htm
