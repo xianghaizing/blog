@@ -1,7 +1,12 @@
+---
+title: Linux安装 jdk Tomcat MySQL
+tags: jdk, Tomcat, MySQL
+---
+
 
 > [toc]
 
-# Jdk安装
+# 1.jdk安装
 官网下载
 http://www.oracle.com/technetwork/java/javase/downloads/index.html 下载linux版本**jdk-xxx.tar.gz**
 
@@ -24,7 +29,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 ```
 
-# Tomcat安装
+# 2.Tomcat安装
 
 下载tomcat https://tomcat.apache.org/download-80.cgi
 
@@ -38,10 +43,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 - `service iptables status`  查看防火墙状态
 - `service iptables stop`    关闭防火墙
 
+# 3.Mysql安装
 
-# Mysql安装
-
-环境: CentOS6
+环境: **CentOS6**
 
 如果已经安装过先卸载,查看是否安装`rpm -qa | grep mysql`, 卸载 `yum –y remove 包名` 或者 `rpm -e --nodeps 包名`
 
@@ -65,3 +69,29 @@ Query OK, 0 rows affected (0.01 sec)
 mysql> FLUSH   PRIVILEGES;
 Query OK, 0 rows affected (0.02 sec)
 ```
+
+环境: **CentOS7**
+
+下载
+`wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm`
+
+安装
+`yum -y install mysql57-community-release-el7-10.noarch.rpm`
+`yum -y install mysql-community-server`
+
+启动
+`systemctl start mysqld.service`
+
+查看状态
+`systemctl status mysqld.service`
+
+设置密码
+`mysql -uroot -p` 
+回车后会提示输入密码 **默认空**
+
+修改密码
+`ALTER USER 'root'@'localhost' IDENTIFIEDBY 'new password';`
+
+授权可视化工具连接
+`grant all on *.* to root@'%' identified by '数据库密码';`
+关闭防火墙
