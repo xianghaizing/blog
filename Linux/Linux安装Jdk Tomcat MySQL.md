@@ -3,7 +3,6 @@ title: Linux安装 jdk Tomcat MySQL
 tags: jdk, Tomcat, MySQL
 ---
 
-
 > [toc]
 
 # 1.jdk安装
@@ -85,13 +84,28 @@ Query OK, 0 rows affected (0.02 sec)
 查看状态
 `systemctl status mysqld.service`
 
-设置密码
-`mysql -uroot -p` 
-回车后会提示输入密码 **默认空**
+查看初始密码
+`grep "password" /var/log/mysqld.log`
+
+```
+grep "password" /var/log/mysqld.log
+1 [Note] A temporary password is generated for root@localhost: DcGSI?xMp7Dt
+```
+
+回车后会提示输入密码
+`mysql -uroot -p`
+
+修改密码安全策略,否则简单密码如root或者123456不能用
+
+`set global validate_password_policy=0;`
+`set global validate_password_length=1;`
 
 修改密码
-`ALTER USER 'root'@'localhost' IDENTIFIEDBY 'new password';`
+`ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';`
 
 授权可视化工具连接
 `grant all on *.* to root@'%' identified by '数据库密码';`
+
 关闭防火墙
+
+参考: https://www.cnblogs.com/brianzhu/p/8575243.html
