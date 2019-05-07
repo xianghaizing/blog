@@ -1,5 +1,5 @@
 ---
-title: Hadoop/Hadoop介绍
+title: Hadoop介绍
 tags: Hadoop,HDFS,MapReduce
 grammar_cjkRuby: true
 ---
