@@ -487,13 +487,13 @@ input.btn_my_zzk {
 }
 
 .meau{
-    width: 240px;
+    width: 290px;
     position: fixed;
     top: 0;
     right: 0;
     background: #f5f5f566;
     padding-top: 60px;
-    transform: translateX(240px);
+    transform: translateX(290px);
     transition: all .6s;
 }
 .meau ul{
@@ -513,7 +513,7 @@ input.btn_my_zzk {
 }
 
 .main_move{
-	transform: translateX(-240px);
+	transform: translateX(-290px);
 }
 
 .meau_move{
