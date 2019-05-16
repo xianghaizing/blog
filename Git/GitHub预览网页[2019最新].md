@@ -45,7 +45,7 @@ grammar_cjkRuby: true
 
 在学习大数据的过程中,经常需要一些模拟数据.本着自己创造不求人的准则,开发了这个模拟数据的小功能.
 
-欢迎食用,如果觉得不错可以在[GitHub](https://github.com/xianghaizing/datamoko)上点在支持哦!!!
+欢迎食用,如果觉得不错可以在[GitHub](https://github.com/xianghaizing/datamoko)上点赞支持哦!!!
 
 - 预览地址: https://xianghaizing.github.io/datamoko/
 - 仓库地址: https://github.com/xianghaizing/datamoko
