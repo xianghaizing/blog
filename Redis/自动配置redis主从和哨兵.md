@@ -110,7 +110,32 @@ ip地址:
 ![](./images/1540954716436.png)
 
 
+停止redis集群脚本
 
+``` bash
+#!/bin/bash
+pid_name="redis"
+echo "杀死的进程名称：" $pid_name
+ 
+pids=$(ps -ef|grep $pid_name|grep -v grep|awk '{print $2}')
+ 
+echo "pid列表：" $pids
+ 
+#反转字符串
+reversal_str=''
+for word in $pids
+do
+  reversal_str="$word $reversal_str"
+done
+ 
+#循环杀死pid
+for item in $reversal_str
+do
+  echo "杀死进程pid=" $item
+  kill -9 $item
+done
+
+```
 
 
 
