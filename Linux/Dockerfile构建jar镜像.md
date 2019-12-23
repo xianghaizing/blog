@@ -12,7 +12,7 @@ docker的好处自不必多说，启动迅速，占用资源少，方便管理�
 
 
 # 安装docker和compose
-[参考：安装docker](https://www.cnblogs.com/linyufeng/p/10093568.html) 使用**CentOS7**,6不能安装。
+[参考：安装docker](https://www.cnblogs.com/linyufeng/p/10093568.html) 使用**CentOS7**
 [参考：安装compose](https://docs.docker.com/compose/install/)
 
 1.安装稳定版docker compose:
@@ -145,4 +145,52 @@ f21fdb5bb57c        >>==lin/eureka==<<          "java -jar app.jar"      4 hours
 2019-12-16 17:18:22.379  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
 ```
 
+# 补充docker-compose配置
 
+docker-compose配置,除了使用`image`指定镜像之外,还可以使用`build`把**构建镜像和启动容器**放在一起执行.
+
+``` 
+version: '3'
+services:
+  eureka2:
+    >>==build: ./eureka==<<
+    >>==image: lin-eureka:2==<<
+    container_name: lin-eureka-2
+    restart: always
+    ports:
+      - 8762:8761
+```
+- build: 指定构建目录,可以使用相对路径
+- image: 跟在build后面,指定构建镜像的名字
+
+构建镜像并启动: `docker-compose up -d`   
+```
+Creating network "work_default" with the default driver
+Building eureka2
+Step 1/5 : FROM java:8
+ ---> d23bdf5b1b1b
+Step 2/5 : MAINTAINER lin
+ ---> Using cache
+ ---> 79ef5083226e
+Step 3/5 : ADD eurake-0.0.1-SNAPSHOT.jar app.jar
+ ---> 7efd60a9f862
+Step 4/5 : EXPOSE 8761
+ ---> Running in 6968db6d10ad
+Removing intermediate container 6968db6d10ad
+ ---> a01061f73fe1
+Step 5/5 : ENTRYPOINT ["java","-jar","app.jar"]
+ ---> Running in 00c5dc7031e0
+Removing intermediate container 00c5dc7031e0
+ ---> 2ed328e41b1c
+Successfully built 2ed328e41b1c
+Successfully tagged lin-eureka:2
+```
+重新构建:
+`docker-compose build` 或者`docker-compose up --build`
+
+查看镜像: `docker image ls`
+
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+lin-eureka          2                   2ed328e41b1c        49 seconds ago      691MB
+```
