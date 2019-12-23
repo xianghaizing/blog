@@ -23,9 +23,11 @@ SERVICE-ZUUL		>>==127.0.0.1:4041==<<
 报错情况:
 
 
->feign.RetryableException: `connect timed out executing` GET http://SERVICE-REDIS/redis/NaviKey-24149-1
+``` java
+feign.RetryableException: >>==connect timed out executing==<< GET http://SERVICE-REDIS/redis/NaviKey-24149-1
 	at feign.FeignException.errorExecuting(FeignException.java:84)
 	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:113)
+```
 
 
 排查后发现:**是因为注册服务ip问题**,导致本地服务无法通过服务名字找到相应的服务.
