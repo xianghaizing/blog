@@ -2,6 +2,7 @@
 title: docker 安装redis mysql rabbitmq
 tags: docker,redis,mysql,rabbitmq
 grammar_cjkRuby: true
+renderNumberedHeading: true
 
 ---
 
@@ -47,3 +48,34 @@ rmi 删除镜像
 - 默认用户`guest`密码`guest`
 - 访问地址: http://ip:15672
 
+# 使用compose构建
+
+创建`docker-compose.yml`文件
+``` yml
+version: '3'
+services:
+  mysql-server:
+    image: mysql:5.7
+    container_name: mysql-server
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+  redis-server:
+    image: redis:latest
+    container_name: redis-server
+    restart: always
+    ports:
+      - 6379:6379
+  rabbitmq-server:
+    image: rabbitmq:management
+    container_name: rabbitmq-server
+    restart: always
+    ports:
+      - 5672:5672
+      - 15672:15672
+```
+启动容器:
+
+`docker-compose up -d`
