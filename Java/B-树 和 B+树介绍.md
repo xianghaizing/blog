@@ -35,3 +35,9 @@ B+树是对B-树升级，中间加点**增加冗余数据**， 叶子节点**增
 >2. 所有查询都要查找到叶子节点，查询性能稳定。
 >3. 所有叶子节点形成有序链表，便于范围查询。
 >来源: https://blog.csdn.net/qq_35571554/article/details/82759668
+
+
+
+参考:
+- https://www.jianshu.com/p/8b653423c586
+- https://blog.csdn.net/qq_35571554/article/details/82759668
