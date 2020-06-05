@@ -1,0 +1,87 @@
+ <div class="cover"><img id="big"></div>
+<script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+<script>
+    $('body').on('click', '.more', function () {
+        $(this).prev().toggleClass('code');
+        $(this).hide();
+    });
+
+    $('#navList').append("<li><a target='_blank' href='https://github.com/xianghaizing/blog''>GitHub</a></li>");
+    $('.blogStats').hide().after('<div class="meau_btn">目录</div>');
+
+    $(function () {
+        $("code, .xiaoshujiang_pre").each(function (b) {
+            if (!$(this).attr('class')) {
+                $(this).attr({
+                    "id": "Copy_" + b,
+                    "data-clipboard-target": "#Copy_" + b
+                })
+            } else {
+                $(this).attr({
+                    "id": "Copy_" + b,
+                }).before('<i class="code_copy" tip="复制代码" data-clipboard-target="#Copy_' + b + '">copy</i>');
+
+                var h = $(this).parents('pre').height();
+                if (h >= 200) {
+                    $(this).parents('pre').after('<div class="more">↓展开↓</div>');
+                }
+            }
+        });
+        $('i.code_copy').on('click', function () {
+            $(this).html('done').css({
+                'color': '#c7254e',
+                'border-color': '#c7254e'
+            });
+        });
+        new ClipboardJS(document.querySelectorAll("[data-clipboard-target]"));
+
+    var nav = $('<ul class="meau"></ul>');
+    $('#main h1').each(function (i) {
+        $(this).html('<a id="nav_'+i+'">'+$(this).text()+'</a>');
+        var li = $('<li><a href="#nav_'+i+'">'+$(this).text()+'</a></li>');
+        li.appendTo(nav);
+    });
+        nav.append('<li><a href="#home">↑ 顶部</a> <a href="#MySignature">底部 ↓</a></li>');
+
+        $('#home').append(nav);
+
+        $('.meau_btn').click(function () {
+            $('.meau').toggleClass('meau_move');
+            $('#main').toggleClass('main_move');
+        });
+
+        $('.meau li a').click(function () {
+            $(this).next('ul').slideToggle();
+        });
+
+        $('.meau').click(function (event) {
+            if (event.target.nodeName != "A") {
+                $('.meau_btn').click();
+            }
+        });
+
+        $('.meau_btn').one('click', function (event) {
+            $('#post_next_prev').clone().appendTo(nav);
+        });
+        /*
+            $('.toc a').click(function (event) {
+              event.preventDefault();
+              var hash = "#"+this.href.split("#")[1];
+               $('html,body').animate({
+                scrollTop: ($(hash).offset().top - 0) + "px"
+              },300);
+            });
+       */
+        $('#cnblogs_post_body img').click(function () {
+            $('#big').attr("src", $(this).attr("src")).parent().css("display", "flex");
+        });
+        $(".cover").click(function () {
+            $(this).hide();
+        });
+        $('p').each(function () {
+            if (this.innerHTML == "&nbsp;") {
+                $(this).hide()
+            }
+        })
+    });
+</script>

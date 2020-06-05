@@ -1,0 +1,481 @@
+* ,.cnblogs-markdown code, .cnblogs-post-body code,.cnblogs-markdown .hljs, .cnblogs-post-body .hljs{
+	line-height:2 !important;
+	font-family: Georgia,Consolas,Arial,Microsift Yahei,sans-serif !important;
+	font-size: 14px !important;
+	font-weight: 400 !important;
+}
+
+pre code, pre code *, .dayTitle a{
+	font-size: 14px !important;
+}
+
+#blogTitle{
+	display: none;
+}
+#blogTitle h1{
+	padding: 0;
+}
+
+#blogTitle h1 a {
+    font-size: 20px !important;
+    font-weight: bold;
+    padding-left: 12px;
+}
+
+h1, h1 * ,.postTitle a{
+	font-size: 20px !important;
+}
+
+#cnblogs_post_body h2, #cnblogs_post_body h2 * {
+	font-size: 17px !important;
+	font-weight: 600 !important;
+}
+
+#cnblogs_post_body h3 , #cnblogs_post_body h3 *{
+	font-size: 16px !important
+}
+
+#blogTitle h2, #cnblogs_post_body h4, #navigator *, .c_b_p_desc, code, code * {
+	/* font-size: 13px !important; */
+}
+
+#cnblogs_post_body h5 {
+	font-size: 13px !important
+}
+
+#cnblogs_post_body h6, .code_copy, .more, .tag {
+	font-size: 12px !important
+}
+
+#sidebar_postcategory ul {
+	overflow: hidden
+}
+
+#sidebar_postcategory li {
+	float: left;
+	margin: 0 5px 5px 0;
+	padding: 0 5px;
+	border: 1px solid #ddd;
+	border-radius: 1em;
+}
+
+pre>i, .xiaoshujiang_code_container>i {
+	position: absolute;
+	right: 0;
+	z-index:1;
+	margin: 3px;
+	padding: 0 2px 2px 4px;
+	border: 2px solid #fff;
+	border-radius: 12px;
+	color: #fff;
+	content: "Copy";
+	font-style: normal;
+	opacity: 0;
+	cursor: pointer;
+	transition: all.3s;
+	line-height: 1.3 !important;
+	background: rgba(255, 144, 255, 1) !important;
+}
+
+pre:hover>i, .xiaoshujiang_code_container:hover>i {
+	opacity: 1
+}
+
+::-moz-selection {
+	background: #390;
+	color: #fff
+}
+
+::selection {
+	background: #390;
+	color: #fff
+}
+
+.postBody li, .postCon li {
+	margin-bottom: 0;
+}
+
+.postCon{
+	width: 100%;
+}
+
+#topics .postTitle {
+	font-weight: 400
+}
+
+#q {
+	border-radius: 1pc;
+	padding: 0 .5pc;
+	outline: none;
+}
+
+#ad_t2, #cnblogs_c1, #cnblogs_c2, #under_post_news, #under_post_kb {
+	display: none !important
+}
+
+#home .cnblogs-markdown .hljs, #home .cnblogs-post-body .hljs {
+	border: none !important;
+}
+
+
+.entrylistPosttitle a:hover, .postTitle a:hover {
+	margin-left: 0;
+}
+
+.toc>ul>li>ul {
+	display: none
+}
+
+pre.code {
+        max-height: none;
+}
+
+pre {
+	border-radius: 5px !important;
+	overflow: hidden;
+        max-height: 200px;
+	position: relative;
+}
+
+.code {
+    padding: 0;
+}
+
+.postBody{
+	position: relative;
+}
+
+pre code {
+	color: #fff !important;
+}
+
+.more {
+	position: absolute;
+	left: 50%;
+	display: block;
+	margin-top: -30px;
+	margin-left: -25px;
+	padding: 0px 5px;
+	border-radius: 6px;
+	background: #3f3f3f;
+	background-image: linear-gradient(0, rgba(237, 237, 237, .6), #fff 100%);
+	color: #dcdcdc;
+	text-align: center;
+	font-size: 90%;
+	cursor: pointer;
+	color: #c7254e;
+}
+
+.more:hover {
+	background-image: linear-gradient(-180deg, hsla(0, 0%, 100%, 0) 0, #0f0 100%);
+	color: #fff;
+}
+
+#cnblogs_post_body .hljs {
+	background: hsla(0, 0%, 93%, 0.6) !important;
+	background: rgb(237, 237, 180) !important;
+}
+
+.cnblogs-markdown code, .cnblogs-post-body code, code {
+	display: inline-block;
+	border: none !important;
+	color: #c7254e !important;
+	/* vertical-align: middle; */
+	padding: 0 10px !important;
+	/* background: rgba(255, 235, 255, 1) !important; */
+	cursor: pointer;
+	line-height: 1.6 !important;
+}
+.cnblogs-markdown code[data-info], .cnblogs-post-body code[data-info],code.hljs {
+	color: #444 !important;
+}
+
+pre code .mark{
+	background: #FFEB3B !important;
+}
+
+pre code[data-info] span {
+	line-height: 1.2 !important;
+}
+
+#cnblogs_post_body h1 {
+	border-bottom: 1px solid rgba(221, 221, 221, .9);
+	width: 100% !important;
+	border-radius: 6px;
+	border-left: 5px solid #0069D6;
+	background: rgba(237, 237, 237, 1);
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+
+.jump_page {
+	position: fixed;
+	display: block;
+	width: 25px;
+	height: 50px;
+	border-radius: 60px;
+	background: #3f3f3f;
+	background-image: linear-gradient(-180deg, hsla(0, 0%, 100%, 0) 0, #fff 100%);
+	color: #dcdcdc !important;
+	text-align: center;
+	line-height: 50px !important;
+	cursor: pointer;
+	bottom: 30px;
+	font-size: 24px !important;
+}
+
+.prev {
+	left: 15px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.next {
+	left: 40px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.jump_page:hover {
+	background-image: linear-gradient(-180deg, hsla(0, 0%, 100%, 0) 0, #0f0 100%);
+	color: #fff;
+}
+
+
+.entrylistPosttitle:hover {
+	background-color: rgba(214 , 219 , 223 , 0.28); 
+    color: #c7254e;
+}
+
+#TopViewPostsBlock li:hover, #sidebar_postarchive li:hover, #sidebar_postcategory li:hover {background-color: rgba(214 , 219 , 223 , 0.28);}
+
+#TopViewPostsBlock li:hover *, #sidebar_postarchive li:hover *, #sidebar_postcategory li:hover * {
+	color: #c7254e !important;
+}
+
+
+.entrylistPosttitle a {
+	font-size: 20px !important;
+}
+
+#topics .postTitle {
+	width: 98%;
+}
+
+.story_image {
+	max-width: 98% !important;
+}
+
+#AllanboltSignature {
+	border-top: #e0e0e0 1px dashed;
+	border-right: #e0e0e0 1px dashed;
+	border-bottom: #e0e0e0 1px dashed;
+	border-left: #e0e0e0 1px dashed;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 60px;
+	font-size: 12px;
+	background: url(https://pic.cnblogs.com/face/1013227/20190524215045.png) #e5f1f4 no-repeat 5px 50%;
+}
+
+#AllanboltSignature div {
+	line-height: 25px;
+}
+
+#header {
+    margin-top: 0;
+}
+
+@media(max-width:767px) {
+	#navigator {
+		margin-top: 0;
+	}
+	.post {
+		padding: 32px 10px;
+	}
+	.day {
+		padding: 32px 20px;
+	}
+}
+
+
+.postTitle:hover a:hover, .postTitle:hover:before {
+	color: #c7254e !important;
+}
+
+.postTitle:hover {
+	border-color: #c7254e !important;
+}
+
+#main blockquote {
+	border-left: 2px solid rgb(239, 239, 239) !important;
+	background: rgba(240 , 240 , 240 , 1) !important;
+}
+
+.postBody blockquote{
+    width: auto;
+}
+
+.postBody blockquote {
+    /* background: none; */
+    padding: 5px 15px !important;
+}
+
+#MySignature * {
+	font-size: 12px !important;
+	color: #607D8B;
+}
+
+#green_channel {
+	width: 99% !important;
+}
+
+#TopViewPostsBlock li {
+	border-radius: 4px;
+}
+
+
+#cnblogs_post_body [data-info=tab] {
+	background: rgba(204 , 204 , 204 , .4) !important;
+	color: #666 !important;
+}
+
+
+.hljs-keyword, .hljs-selector-tag, .hljs-built_in, .hljs-name, .hljs-tag {
+	/* color: #efef8f !important; */
+}
+
+.hljs-string, .hljs-title, .hljs-section, .hljs-attribute, .hljs-literal, .hljs-template-tag, .hljs-template-variable, .hljs-type, .hljs-addition {
+	color: #a31515 !important;
+}
+
+.hljs-comment, .hljs-quote, .hljs-variable,.hljs-deletion, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-meta {
+	color: #008000 !important;
+}
+
+.hljs-number, .hljs-date, .hljs-regexp, .hljs-literal, .hljs-hexcolor, .smalltalk .hljs-symbol, .smalltalk .hljs-char, .go .hljs-constant, .hljs-change, .lasso .hljs-variable, .makefile .hljs-variable, .asciidoc .hljs-bullet, .markdown .hljs-bullet, .asciidoc .hljs-link_url, .markdown .hljs-link_url {
+	color: #008000 !important;
+}
+
+.hljs-keyword, .hljs-id, .hljs-title, .hljs-built_in, .css .hljs-tag, .hljs-javadoctag, .hljs-phpdoc, .hljs-dartdoc, .hljs-yardoctag, .smalltalk .hljs-class, .hljs-winutils, .bash .hljs-variable, .pf .hljs-variable, .apache .hljs-tag, .hljs-type, .hljs-typename, .tex .hljs-command, .asciidoc .hljs-strong, .markdown .hljs-strong, .hljs-request, .hljs-status {
+	font-weight: normal !important;
+}
+
+.cover {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .9);
+	z-index: 99;
+	display: none;
+	left: 0;
+	top: 0;
+	align-items: center;
+	justify-content: center;
+}
+
+input{
+    line-height: 1 !important;
+}
+
+#cnblogs_post_body h1:hover:before {
+    color: #c7254e;
+}
+
+.meau{
+    width: 300px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 60px 15px 0 15px;
+    transform: translateX(320px);
+    transition: all .6s;
+    height: 100%;
+    background-color: #F5F5F5;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    z-index: 5;
+}
+.meau ul{
+	margin-left: 20px !important;
+}
+
+#main {
+	transition: all .6s;
+}
+
+.meau_btn{
+    color: #fff;
+    cursor: pointer;
+    margin: 0px 10px 0 0;
+    padding: 0 10px;
+    display: block;
+    text-shadow: 3px 3px 3px #000;
+    position:fixed;
+    right:0;
+    z-index: 60;
+}
+
+.main_move{
+	/* transform: translateX(-290px); */
+}
+
+.meau_move{
+	transform: translateX(0);
+}
+th,strong{
+    font-weight: bold !important;
+}
+
+.entrylistTitle, .PostListTitle, .thumbTitle {
+    text-align: center;
+}
+
+.day {
+    margin-bottom: 0;
+}
+.dayTitle {
+	width: 110px;
+}
+.tag{
+	font-weight: 600 !important;
+	padding: 0 5px 0 5px !important;
+}
+.entrylistPosttitle a {
+    margin-left: 0;
+}
+canvas {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+body, #main, #mainContent, .day, #tbCommentBody, #tbCommentAuthor, #btnZzk, #btn_comment_submit {
+	background: transparent;
+}
+
+#main {
+	background: rgba(255, 255, 255, .9);
+}
+
+.postBody ul li, .postCon ul li {
+    list-style: arabic-indic;
+}
+
+#cnblogs_post_body .toc ul li{
+	list-style: none;
+}
+
+pre>i, .xiaoshujiang_code_container>i ,
+#home .cnblogs-markdown .hljs, #home .cnblogs-post-body .hljs ,
+pre code.hljs, pre code.hljs *,
+#MySignature * {
+	font-family: Consolas,Arial,Microsift Yahei,sans-serif !important;
+}
+
+hr {
+    border: none;
+    border-top: 1px dotted #ccc;
+}
