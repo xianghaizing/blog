@@ -1,7 +1,3 @@
----
-title: MongoDB/MongoDB高可用集群配置方案
----
-
 > 原文地址: https://www.jianshu.com/p/e7e70ca7c7e5
 
 ---
